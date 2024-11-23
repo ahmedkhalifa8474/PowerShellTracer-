@@ -21,6 +21,8 @@ Monitors system activity using Sysmon Event IDs:
 1: Process creation
 3: Network connections
 11: File creation time
+
+
 4. Scheduled Task Event Analysis
 Detects task creation or modifications using Event IDs 4697 and 4698.
 
