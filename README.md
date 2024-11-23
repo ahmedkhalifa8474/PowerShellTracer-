@@ -15,11 +15,15 @@ Extracts security-related event logs, including:
 4688: Process creation
 4689: Process termination
 4648: Account logon
+
 3. Sysmon Event Monitoring
+
 Monitors system activity using Sysmon Event IDs:
 
 1: Process creation
+
 3: Network connections
+
 11: File creation time
 
 
