@@ -36,4 +36,9 @@ Identifies attack techniques such as script-based exploits, task scheduling abus
 8. Automated & Customizable
 Automatically collects logs and supports adding custom event IDs or log sources for tailored investigation
 
+![image](https://github.com/user-attachments/assets/9a56da31-b131-4ee8-965e-132e137226f7)
+
+![image](https://github.com/user-attachments/assets/f6cd851d-dfe3-4139-8e8d-cc0106681884)
+
+
 
