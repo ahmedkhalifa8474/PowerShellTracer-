@@ -20,11 +20,11 @@ Extracts security-related event logs, including:
 
 Monitors system activity using Sysmon Event IDs:
 
-1: Process creation
+EventId 1: Process creation
 
-3: Network connections
+EventId 3: Network connections
 
-11: File creation time
+EventId 11: File creation time
 
 
 4. Scheduled Task Event Analysis
