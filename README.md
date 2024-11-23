@@ -13,7 +13,9 @@ Captures PowerShell-related logs (e.g., Event IDs 4103, 4104, 4105, 4106).
 Extracts security-related event logs, including:
 
 4688: Process creation
+
 4689: Process termination
+
 4648: Account logon
 
 3. Sysmon Event Monitoring
