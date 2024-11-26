@@ -1,52 +1,82 @@
+PowerShellTracer
 
-Python Script to Detect Remote Connections & PowerShell Executions Using Event IDs and IOCs
+PowerShellTracer is a security monitoring tool designed to detect suspicious PowerShell activity on Windows systems by scanning event logs for Indicators of Compromise (IOCs). It focuses on detecting malicious 
 
-"Overview"
+PowerShell commands, which are often used in attack scenarios like malware execution, exploitation, and system compromise.
 
-PowerShellTracer is a Python script designed to collect and analyze event logs from Windows systems. It focuses on PowerShell, security, Sysmon, and scheduled task logs to identify potential malicious activities. The script allows users to specify a time range (e.g., the last 6 hours) and outputs results in a CSV file named PowerShell.csv for easy analysis.
+Features
 
-"Key Features"
-1. PowerShell Event Log Collection
-Captures PowerShell-related logs (e.g., Event IDs 4103, 4104, 4105, 4106).
+IOC Detection: Identifies suspicious PowerShell commands (e.g., Invoke-WebRequest, Base64, IEX, etc.) that may indicate an attack.
 
-2. Security Event Log Integration
-Extracts security-related event logs, including:
+Real-Time Monitoring: Monitors Windows event logs in real time and triggers alerts when critical IOCs are detected.
 
-4688: Process creation
+Telegram Alerts: Sends instant alerts to a Telegram chat whenever an IOC is found, helping security teams stay informed.
 
-4689: Process termination
+Event Log Parsing: Retrieves and analyzes PowerShell-related event logs from multiple log sources, such as Microsoft-Windows-PowerShell/Operational, Security, and System.
 
-4648: Account logon
-
-3. Sysmon Event Monitoring
-
-Monitors system activity using Sysmon Event IDs:
-
-EventId 1: Process creation
-
-EventId 3: Network connections
-
-EventId 11: File creation time
+CSV Export: Saves detected events to a CSV file for further analysis and record-keeping.
 
 
-4. Scheduled Task Event Analysis
-Detects task creation or modifications using Event IDs 4697 and 4698.
+Customizable Detection: Users can customize which IOCs to search for by modifying the regular expressions and event IDs.
 
-5. Time-Based Filtering
-Filters logs based on a specified time range (e.g., last 6 hours).
 
-6. CSV Output
-Outputs results in a structured CSV file (PowerShell.csv) with details like Event ID, timestamp, command, user, and process ID.
+Installation
 
-7. Comprehensive IOC Coverage
-Identifies attack techniques such as script-based exploits, task scheduling abuse, and lateral movement.
+Clone the repository:
 
-8. Automated & Customizable
-Automatically collects logs and supports adding custom event IDs or log sources for tailored investigation
+git clone https://github.com/<your-username>/PowerShellTracer.git
 
-![image](https://github.com/user-attachments/assets/9a56da31-b131-4ee8-965e-132e137226f7)
+Install the required dependencies:
 
-![image](https://github.com/user-attachments/assets/f6cd851d-dfe3-4139-8e8d-cc0106681884)
+pip install -r requirements.txt
+
+Ensure that you have the correct permissions to read event logs on your Windows machine. Run the script as an administrator if necessary.
+
+Configuration
+
+Before running the tool, update the following parameters:
+
+API Token: Get your Telegram bot API token by creating a bot via BotFather.
+
+Chat ID: Obtain your Telegram chat ID by sending a message to your bot and using the /getUpdates endpoint.
+Usage
+
+You can run the tool in one of two modes:
+
+Fetch Events: Fetch event logs from the past 6 hours, detect IOCs, and save the results to a CSV file.
+
+python PowerShellTracer.py
+
+Live Tracking Mode: Continuously monitor the event logs and display new events as they are detected in real time.
+
+python PowerShellTracer.py
+
+Mode Selection:
+
+Choose mode 1 for fetching events and saving them to a CSV file.
+
+Choose mode 2 for live tracking and monitoring event logs in real time.
+
+Example Output
+
+When suspicious activity is detected, an alert message like the following will be sent to your Telegram chat:
+
+
+There is An IOC Found
+Contributing
+
+
+![image](https://github.com/user-attachments/assets/86d9aaed-2361-446a-a70e-f3bcc34f08d7)
+
+![image](https://github.com/user-attachments/assets/64fa6be0-ed99-40e7-b0cf-fce7a3f0dbc3)
+
+![image](https://github.com/user-attachments/assets/1d01cb2a-e0ee-4765-9303-3531c5a26462)
+
+
+
+
+
+If you'd like to contribute to this project, feel free to fork the repository, create a branch, and submit a pull request with your changes.
 
 
 
